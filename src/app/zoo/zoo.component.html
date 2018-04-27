@@ -1,0 +1,14 @@
+<div>
+  <label>
+    Name:
+    <input type="text" #name>
+  </label>
+  <button (click)="addAnimal(name.value)">Add</button>
+
+  <ul>
+    <li *ngFor="let animal of animals$ |async" [style.opacity]="(loading$ | async) ? 0.5: 1">
+      {{animal}}
+      <button (click)="removeAnimal(animal)">X</button>
+    </li>
+  </ul>
+</div>
