@@ -7,6 +7,7 @@ import {NgxsModule} from "@ngxs/store";
 import { ZooComponent } from './zoo/zoo.component';
 import {ZooState} from "./zoo/animals.state";
 import {ZooService} from "./zoo/zoo.service";
+import {SelectState} from './zoo/select.state';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {ZooService} from "./zoo/zoo.service";
   imports: [
     BrowserModule,
     NgxsModule.forRoot([
-      ZooState
+      ZooState,
+      SelectState
     ])
   ],
   providers: [

@@ -3,6 +3,7 @@ import {Select, Store} from '@ngxs/store';
 import {Observable} from 'rxjs';
 import {AddAnimal, RemoveAnimal} from './animals.action';
 import {ZooState} from './animals.state';
+import {SetSelected} from './select.state';
 
 @Component({
   selector: 'app-zoo',
@@ -37,7 +38,14 @@ export class ZooComponent implements OnInit {
     ).subscribe(() => {
       console.log('Removed!');
     });
+  }
 
+  selectId(number: number) {
+    this.store.dispatch(
+      new SetSelected(number)
+    ).subscribe(() => {
+      console.log('set selected', number);
+    });
   }
 
 }

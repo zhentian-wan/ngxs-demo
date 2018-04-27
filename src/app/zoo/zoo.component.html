@@ -5,6 +5,11 @@
   </label>
   <button (click)="addAnimal(name.value)">Add</button>
 
+  <label>
+    Choose one: <input type="number" #number>
+    <button (click)="selectId(number.value)">Select</button>
+  </label>
+
   <ul>
     <li *ngFor="let animal of animals$ |async" [style.opacity]="(loading$ | async) ? 0.5: 1">
       {{animal}}
